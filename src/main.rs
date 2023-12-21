@@ -1,11 +1,12 @@
-use hash::hashtable::HashTable;
+use crate::hash::hashtable::HashTable;
 
 pub mod hash;
+
 fn main() {
-    let mut hash = HashTable::new();
+    let mut ht = HashTable::new();
+    ht.insert('a', 12);
+    ht.insert('b', 12);
+    ht.insert('c', 12);
 
-    hash.insert("a", 12);
-    hash.insert("b", 12);
-
-    println!("hash is {:?}", hash);
+    dbg!(ht);
 }
