@@ -10,7 +10,10 @@ impl HashAble for i32 {
 
 impl HashAble for char {
     fn hash_key(&self) -> usize {
-        *self as usize
+        let hash = 5381;
+        let c = *self as usize;
+
+        ((hash << 5) + hash) + (c as usize)
     }
 }
 
